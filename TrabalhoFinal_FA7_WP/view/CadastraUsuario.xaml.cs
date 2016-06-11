@@ -14,6 +14,8 @@ namespace TrabalhoFinal_FA7_WP.view
 {
     public partial class CadastraUsuario : PhoneApplicationPage
     {
+        bool isNewInstance;
+
         public CadastraUsuario()
         {
             InitializeComponent();
@@ -62,6 +64,30 @@ namespace TrabalhoFinal_FA7_WP.view
                     CarregarUsuarios();
                 }
             }
+        }
+
+        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        {
+            base.OnNavigatingFrom(e);
+
+            //salva dados da aplicacao em uma tabela hash quando entra em tombstoned
+            State["nome"] = txtUsuario.Text;
+            isNewInstance = false;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            if (isNewInstance)
+            {
+                //recupera os dados qdo volta a rodar a aplicação
+                if (State.ContainsKey("nome"))
+                {
+                    txtUsuario.Text = State["nome"].ToString();
+                }
+            }
+
         }
 
         void CarregarUsuarios()

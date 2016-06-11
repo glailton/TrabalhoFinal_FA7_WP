@@ -17,6 +17,7 @@
     <Grid>
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Usuário" HorizontalAlignment="Center"/>
+          <!--  <TextBlock Name="txtTeste"></TextBlock>-->
             <!--TextBox Name="txtUsuario" />-->
             <toolkit:ListPicker Name="lspusuarios">
                 <toolkit:ListPicker.FullModeItemTemplate>
