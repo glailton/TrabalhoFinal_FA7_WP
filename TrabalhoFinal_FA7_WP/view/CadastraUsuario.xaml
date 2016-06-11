@@ -14,16 +14,35 @@
     shell:SystemTray.IsVisible="True">
 
     <Grid>
-        <StackPanel Orientation="Vertical">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0">
             <TextBlock Text="Usuário" HorizontalAlignment="Center"/>
             <TextBox Name="txtUsuario" />
             <Button Name="btnCadastrarUsuario" Content="Cadastrar Usuário" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnCadastrarUsuario_Click"/>
 
-            <StackPanel Margin="50" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <ListBox Name="repositories"/>
-            </StackPanel>
+
+            <ListBox Name="listaUsuarios" Grid.Row="1">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock FontSize="50" 
+                                   FontWeight="Bold"
+                                   Text="{Binding Nome}"/>
+                            </StackPanel>
+                            <Image Source="/Assets/delete.png" Tap="Image_Tap"></Image>
+                        </StackPanel>
+
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
-        <StackPanel Name="ContentPanel" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+
+        <StackPanel Name="ContentPanel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="2">
             <HyperlinkButton Name="btnVoltar" Content="Voltar" VerticalAlignment="Bottom"
                      Click="btnVoltar_Click"/>
         </StackPanel>

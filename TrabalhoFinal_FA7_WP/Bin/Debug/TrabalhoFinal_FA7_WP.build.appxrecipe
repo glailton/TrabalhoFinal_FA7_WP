@@ -39,6 +39,9 @@
     <AppxPackagedFile Include="c:\users\glail\OneDrive\Documentos\Visual Studio 2015\Projects\TrabalhoFinal_FA7_WP\TrabalhoFinal_FA7_WP\Assets\BadgeLogo.png">
       <PackagePath>Assets\BadgeLogo.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="c:\users\glail\OneDrive\Documentos\Visual Studio 2015\Projects\TrabalhoFinal_FA7_WP\TrabalhoFinal_FA7_WP\Assets\delete.png">
+      <PackagePath>Assets\delete.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="c:\users\glail\OneDrive\Documentos\Visual Studio 2015\Projects\TrabalhoFinal_FA7_WP\TrabalhoFinal_FA7_WP\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>

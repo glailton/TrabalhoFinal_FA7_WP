@@ -7,6 +7,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using TrabalhoFinal_FA7_WP.Resources;
+using TrabalhoFinal_FA7_WP.bd;
 
 namespace TrabalhoFinal_FA7_WP
 {
@@ -67,6 +68,13 @@ namespace TrabalhoFinal_FA7_WP
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            using (var db = new UsuarioDataContext())
+            {
+                if (!db.DatabaseExists())
+                {
+                    db.CreateDatabase();
+                }         
+            }
         }
 
         // Code to execute when the application is activated (brought to foreground)
