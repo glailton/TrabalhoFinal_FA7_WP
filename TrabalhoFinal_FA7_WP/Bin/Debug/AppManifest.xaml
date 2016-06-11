@@ -2,6 +2,7 @@
   <Deployment.Parts>
     <AssemblyPart x:Name="TrabalhoFinal_FA7_WP" Source="TrabalhoFinal_FA7_WP.dll" />
     <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
     <AssemblyPart x:Name="Newtonsoft.Json" Source="Newtonsoft.Json.dll" />
   </Deployment.Parts>
 </Deployment>

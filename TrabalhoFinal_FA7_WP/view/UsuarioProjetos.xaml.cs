@@ -15,12 +15,13 @@ namespace TrabalhoFinal_FA7_WP.view
         public UsuarioProjetos()
         {
             InitializeComponent();
+            CarregarUsuarios();
         }
 
         private async void btnListarProjetos_Click(object sender, RoutedEventArgs e)
         {
             var gitHubRepositories = new GitHubRepositories();
-            var lista = await gitHubRepositories.GetRepositories(txtUsuario.Text);
+            var lista = await gitHubRepositories.GetRepositories(lspusuarios.SelectedItem as string);
             repositories.ItemsSource = lista;
         }
 
@@ -30,6 +31,28 @@ namespace TrabalhoFinal_FA7_WP.view
             {
                 this.NavigationService.GoBack();
             }
+        }
+
+        void CarregarUsuarios()
+        {
+            using (var db = new bd.UsuarioDataContext())
+            {
+                var resultado = (from usuario in db.usuarios
+                                 orderby usuario.Nome
+
+                                 select usuario).ToList();
+                // lspusuarios.Items.Add(resultado);
+                List<string> listaNomes = new List<string>();
+                
+                foreach(var nome in resultado)
+                {
+                    listaNomes.Add(nome.Nome);
+                }
+
+                lspusuarios.ItemsSource = listaNomes;
+            }
+
+
         }
     }
 }
