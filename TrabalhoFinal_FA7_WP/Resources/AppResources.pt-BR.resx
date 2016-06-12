@@ -167,4 +167,7 @@
   <data name="user" xml:space="preserve">
     <value>Usuário</value>
   </data>
+  <data name="userAdded" xml:space="preserve">
+    <value>Usuário adicionado com sucesso</value>
+  </data>
 </root>

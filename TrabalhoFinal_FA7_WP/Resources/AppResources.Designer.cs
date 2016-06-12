@@ -203,5 +203,14 @@ namespace TrabalhoFinal_FA7_WP.Resources {
                 return ResourceManager.GetString("user", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User added with sucess.
+        /// </summary>
+        public static string userAdded {
+            get {
+                return ResourceManager.GetString("userAdded", resourceCulture);
+            }
+        }
     }
 }

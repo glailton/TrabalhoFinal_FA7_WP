@@ -34,7 +34,7 @@ namespace TrabalhoFinal_FA7_WP.view
                 db.usuarios.InsertOnSubmit(usuario);
                 db.SubmitChanges();
 
-                MessageBox.Show("Inserido com sucesso");
+                MessageBox.Show(AppResources.userAdded);
                 txtUsuario.Text = "";
                 CarregarUsuarios();
             }
