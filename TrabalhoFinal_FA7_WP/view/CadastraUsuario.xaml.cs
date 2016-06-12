@@ -71,18 +71,26 @@ namespace TrabalhoFinal_FA7_WP.view
             base.OnNavigatingFrom(e);
 
             //salva dados da aplicacao em uma tabela hash quando entra em tombstoned
-            State["nome"] = txtUsuario.Text;
+            if (!txtUsuario.Text.Equals(""))
+            {
+                State["nome"] = txtUsuario.Text;
+            }          
             isNewInstance = false;
         }
 
+        /// <summary>
+        /// Invoked when this page is about to be displayed in a Frame.
+        /// </summary>
+        /// <param name="e">Event data that describes how this page was reached.  The Parameter
+        /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
-            if (isNewInstance)
+            if (!isNewInstance)
             {
                 //recupera os dados qdo volta a rodar a aplicação
-                if (State.ContainsKey("nome"))
+                if (NavigationContext.QueryString.ContainsKey("nome"))
                 {
                     txtUsuario.Text = State["nome"].ToString();
                 }
@@ -99,6 +107,33 @@ namespace TrabalhoFinal_FA7_WP.view
                                  select usuario).ToList();
                 listaUsuarios.ItemsSource = resultado;
             }
+        }
+
+        private void listaUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (MessageBox.Show("Deseja criar um tile para esse usuário?", "Criar Tile Secundário", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            {
+                //Nesse metodo é verificado se o usuário deseja criar um Tile secundario para o usuario cadastrado
+                var mySelectedItem = listaUsuarios.SelectedItem as Usuario;
+
+                Uri uri = new Uri("/view/UsuarioProjetos.xaml?nome=" + mySelectedItem.Nome, UriKind.Relative);
+                ShellTile existe = ShellTile.ActiveTiles.FirstOrDefault(
+                    x => x.NavigationUri.Equals(uri));
+
+                if (existe == null)
+                {
+                    StandardTileData dados = new StandardTileData();
+                    dados.Title = mySelectedItem.Nome;
+                    dados.BackTitle = mySelectedItem.Nome;
+                    dados.BackgroundImage = new Uri("Assets/Tiles/download.jpg", UriKind.Relative);
+                    ShellTile.Create(uri, dados);
+                }
+                else
+                {
+                    MessageBox.Show("Tile já existe");
+                }
+            }
+               
         }
     }
 }

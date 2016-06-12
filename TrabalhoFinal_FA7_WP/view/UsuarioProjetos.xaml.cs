@@ -45,18 +45,30 @@ namespace TrabalhoFinal_FA7_WP.view
             isNewInstance = false;
         }
 
+        /// <summary>
+        /// Invoked when this page is about to be displayed in a Frame.
+        /// </summary>
+        /// <param name="e">Event data that describes how this page was reached.  The Parameter
+        /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
-            if (isNewInstance)
+            /*  if (isNewInstance)
+              {
+                  //recupera os dados qdo volta a rodar a aplicação
+                  if (State.ContainsKey("nome"))
+                  {
+                      lspusuarios.SelectedItem = State["nome"].ToString();
+                      //txtTeste.Text = State["nome"].ToString();
+                  }
+              */
+
+            //Chamado quando o usuario clica no Tile Secundario
+            if (NavigationContext.QueryString.ContainsKey("nome"))
             {
-                //recupera os dados qdo volta a rodar a aplicação
-                if (State.ContainsKey("nome"))
-                {
-                    lspusuarios.SelectedItem = State["nome"].ToString();
-                    //txtTeste.Text = State["nome"].ToString();
-                }
+                string nome = NavigationContext.QueryString["nome"];
+                lspusuarios.SelectedItem = nome;
             }
 
         }
@@ -71,8 +83,8 @@ namespace TrabalhoFinal_FA7_WP.view
                                  select usuario).ToList();
 
                 List<string> listaNomes = new List<string>();
-                
-                foreach(var nome in resultado)
+
+                foreach (var nome in resultado)
                 {
                     listaNomes.Add(nome.Nome);
                 }

@@ -19,18 +19,19 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Vertical" Grid.Row="0">
+        <StackPanel Name="content" Orientation="Vertical" Grid.Row="0">
             <TextBlock Text="Usuário" HorizontalAlignment="Center"/>
             <TextBox Name="txtUsuario" />
             <Button Name="btnCadastrarUsuario" Content="Cadastrar Usuário" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnCadastrarUsuario_Click"/>
 
 
-            <ListBox Name="listaUsuarios" Grid.Row="1">
+            <ListBox Name="listaUsuarios" Grid.Row="1" SelectionChanged="listaUsuarios_SelectionChanged" Height="560"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <StackPanel>
-                                <TextBlock FontSize="50" 
+                                <TextBlock Name="txtListUsuario" FontSize="50" 
                                    FontWeight="Bold"
                                    Text="{Binding Nome}"/>
                             </StackPanel>
@@ -40,11 +41,6 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-        </StackPanel>
-
-        <StackPanel Name="ContentPanel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="2">
-            <HyperlinkButton Name="btnVoltar" Content="Voltar" VerticalAlignment="Bottom"
-                     Click="btnVoltar_Click"/>
         </StackPanel>
     </Grid>
 

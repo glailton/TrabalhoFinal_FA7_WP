@@ -16,7 +16,7 @@ namespace TrabalhoFinal_FA7_WP
         // Constructor
         public MainPage()
         {
-            InitializeComponent();                
+            InitializeComponent();
         }
 
         private void btnProjetos_Click(object sender, RoutedEventArgs e)
@@ -27,6 +27,11 @@ namespace TrabalhoFinal_FA7_WP
         private void btnCadastro_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/view/CadastraUsuario.xaml", UriKind.Relative));
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
         }
     }
 }

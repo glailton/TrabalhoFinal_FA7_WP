@@ -17,25 +17,19 @@
     <Grid>
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Usuário" HorizontalAlignment="Center"/>
-          <!--  <TextBlock Name="txtTeste"></TextBlock>-->
-            <!--TextBox Name="txtUsuario" />-->
-            <toolkit:ListPicker Name="lspusuarios">
-                <toolkit:ListPicker.FullModeItemTemplate>
+            <toolkit:ListPicker Name="lspusuarios" FullModeHeader="Usuários">
+                <toolkit:ListPicker.HeaderTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Nome}"/>
                     </DataTemplate>
-                </toolkit:ListPicker.FullModeItemTemplate>
-                </toolkit:ListPicker>
+                </toolkit:ListPicker.HeaderTemplate>
+            </toolkit:ListPicker>
 
-                <Button Name="btnListarProjetos" Content="Listar Projetos" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnListarProjetos_Click"/>
+            <Button Name="btnListarProjetos" Content="Listar Projetos" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnListarProjetos_Click"/>
 
-                <StackPanel Margin="50" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <ListBox Name="repositories"/>
-                </StackPanel>
-        </StackPanel>
-        <StackPanel Name="ContentPanel" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <HyperlinkButton Name="btnVoltar" Content="Voltar" VerticalAlignment="Bottom"
-                     Click="btnVoltar_Click"/>
+            <StackPanel Margin="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ListBox Name="repositories"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </phone:PhoneApplicationPage>
