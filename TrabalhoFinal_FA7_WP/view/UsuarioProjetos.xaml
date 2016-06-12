@@ -16,7 +16,7 @@
 
     <Grid>
         <StackPanel Orientation="Vertical">
-            <TextBlock Text="Usuário" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding LocalizedResources.user, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" FontSize="30"/>
             <toolkit:ListPicker Name="lspusuarios" FullModeHeader="Usuários">
                 <toolkit:ListPicker.HeaderTemplate>
                     <DataTemplate>
@@ -25,10 +25,10 @@
                 </toolkit:ListPicker.HeaderTemplate>
             </toolkit:ListPicker>
 
-            <Button Name="btnListarProjetos" Content="Listar Projetos" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnListarProjetos_Click"/>
+            <Button Name="btnListarProjetos" Content="{Binding LocalizedResources.showProjects, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Width="260" HorizontalAlignment="Center" Click="btnListarProjetos_Click"/>
 
             <StackPanel Margin="50" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <ListBox Name="repositories"/>
+                <ListBox Name="repositories" Height="500"/>
             </StackPanel>
         </StackPanel>
     </Grid>

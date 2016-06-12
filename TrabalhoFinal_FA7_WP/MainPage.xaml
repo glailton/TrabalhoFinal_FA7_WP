@@ -14,9 +14,9 @@
     shell:SystemTray.IsVisible="True">
 
     <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-        <TextBlock Text="Home" HorizontalAlignment="Center" />
-        <Button Name="btnProjetos" Content="Projetos por Usuário" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnProjetos_Click"/>
-        <Button Name="btnCadastro" Content="Cadastro de Usuário" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnCadastro_Click"/>
+        <TextBlock Text="{Binding LocalizedResources.pageTitle, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="50" HorizontalAlignment="Center" />
+        <Button Name="btnProjetos" Content="{Binding LocalizedResources.projectsUsers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Width="250" HorizontalAlignment="Center" Click="btnProjetos_Click"/>
+        <Button Name="btnCadastro" Content="{Binding LocalizedResources.addUsers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Width="250" HorizontalAlignment="Center" Click="btnCadastro_Click"/>
     </StackPanel>
 
 </phone:PhoneApplicationPage>

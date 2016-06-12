@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using TrabalhoFinal_FA7_WP.model;
 using TrabalhoFinal_FA7_WP.bd;
+using TrabalhoFinal_FA7_WP.Resources;
 
 namespace TrabalhoFinal_FA7_WP.view
 {
@@ -49,7 +50,7 @@ namespace TrabalhoFinal_FA7_WP.view
 
         private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente excluir usuário?", "Remover", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            if (MessageBox.Show(AppResources.removeUserAsk, AppResources.removeUserTitle, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
             {
                 Image img = (Image)sender;
                 Usuario aluno = (Usuario)img.DataContext;
@@ -60,22 +61,10 @@ namespace TrabalhoFinal_FA7_WP.view
                     db.usuarios.DeleteOnSubmit(aluno);
                     db.SubmitChanges();
 
-                    MessageBox.Show("Removido com sucesso");
+                    MessageBox.Show(AppResources.sucessRemoved);
                     CarregarUsuarios();
                 }
             }
-        }
-
-        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
-        {
-            base.OnNavigatingFrom(e);
-
-            //salva dados da aplicacao em uma tabela hash quando entra em tombstoned
-            if (!txtUsuario.Text.Equals(""))
-            {
-                State["nome"] = txtUsuario.Text;
-            }          
-            isNewInstance = false;
         }
 
         /// <summary>
@@ -111,7 +100,7 @@ namespace TrabalhoFinal_FA7_WP.view
 
         private void listaUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (MessageBox.Show("Deseja criar um tile para esse usuário?", "Criar Tile Secundário", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            if (MessageBox.Show(AppResources.createSecTileAsk, AppResources.createSecTileTitle, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
             {
                 //Nesse metodo é verificado se o usuário deseja criar um Tile secundario para o usuario cadastrado
                 var mySelectedItem = listaUsuarios.SelectedItem as Usuario;
@@ -130,7 +119,7 @@ namespace TrabalhoFinal_FA7_WP.view
                 }
                 else
                 {
-                    MessageBox.Show("Tile já existe");
+                    MessageBox.Show(AppResources.existedTile);
                 }
             }
                

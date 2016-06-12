@@ -122,7 +122,7 @@
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>en-US</value>
+    <value>pt-BR</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
@@ -135,36 +135,36 @@
     <value>Menu Item</value>
   </data>
   <data name="addUsers" xml:space="preserve">
-    <value>Add User</value>
-  </data>
-  <data name="createSecTileAsk" xml:space="preserve">
-    <value>Do you wish create a secondary Tile for this user?</value>
-  </data>
-  <data name="createSecTileTitle" xml:space="preserve">
-    <value>Create Secondary Tile?</value>
-  </data>
-  <data name="existedTile" xml:space="preserve">
-    <value>Already existed a Tile with this name</value>
+    <value>Cadastrar Usuário</value>
   </data>
   <data name="pageTitle" xml:space="preserve">
-    <value>GitHub Projects</value>
+    <value>Projetos GitHub</value>
   </data>
   <data name="projectsUsers" xml:space="preserve">
-    <value>Projects by User</value>
+    <value>Projetos por Usuário</value>
+  </data>
+  <data name="createSecTileAsk" xml:space="preserve">
+    <value>Deseja criar um Tile secundário para esse Usuário?</value>
+  </data>
+  <data name="createSecTileTitle" xml:space="preserve">
+    <value>Criar Tile Secundário</value>
+  </data>
+  <data name="existedTile" xml:space="preserve">
+    <value>Já existe um Tile com esse nome!</value>
   </data>
   <data name="removeUserAsk" xml:space="preserve">
-    <value>Do you wish really remove this user?</value>
+    <value>Deseja realmente excluir usuário?</value>
   </data>
   <data name="removeUserTitle" xml:space="preserve">
-    <value>Remove</value>
+    <value>Remover</value>
   </data>
   <data name="showProjects" xml:space="preserve">
-    <value>Show Projects</value>
+    <value>Listar Projetos</value>
   </data>
   <data name="sucessRemoved" xml:space="preserve">
-    <value>Sucess Removed</value>
+    <value>Removido com sucesso!</value>
   </data>
   <data name="user" xml:space="preserve">
-    <value>User</value>
+    <value>Usuário</value>
   </data>
 </root>

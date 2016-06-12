@@ -12,12 +12,10 @@ namespace TrabalhoFinal_FA7_WP.view
 {
     public partial class UsuarioProjetos : PhoneApplicationPage
     {
-        bool isNewInstance;
 
         public UsuarioProjetos()
         {
             InitializeComponent();
-            isNewInstance = true;
             CarregarUsuarios();
         }
 
@@ -36,15 +34,6 @@ namespace TrabalhoFinal_FA7_WP.view
             }
         }
 
-        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
-        {
-            base.OnNavigatingFrom(e);
-
-            //salva dados da aplicacao em uma tabela hash quando entra em tombstoned
-            State["nome"] = lspusuarios.SelectedItem.ToString();
-            isNewInstance = false;
-        }
-
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
         /// </summary>
@@ -54,23 +43,12 @@ namespace TrabalhoFinal_FA7_WP.view
         {
             base.OnNavigatedTo(e);
 
-            /*  if (isNewInstance)
-              {
-                  //recupera os dados qdo volta a rodar a aplicação
-                  if (State.ContainsKey("nome"))
-                  {
-                      lspusuarios.SelectedItem = State["nome"].ToString();
-                      //txtTeste.Text = State["nome"].ToString();
-                  }
-              */
-
             //Chamado quando o usuario clica no Tile Secundario
             if (NavigationContext.QueryString.ContainsKey("nome"))
             {
                 string nome = NavigationContext.QueryString["nome"];
                 lspusuarios.SelectedItem = nome;
             }
-
         }
 
         void CarregarUsuarios()

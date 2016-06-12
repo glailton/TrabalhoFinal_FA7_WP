@@ -89,3 +89,6 @@ c:\users\glail\OneDrive\Documentos\Visual Studio 2015\Projects\TrabalhoFinal_FA7
 c:\users\glail\OneDrive\Documentos\Visual Studio 2015\Projects\TrabalhoFinal_FA7_WP\TrabalhoFinal_FA7_WP\Bin\Debug\vi-VN\Microsoft.Phone.Controls.Toolkit.resources.dll
 c:\users\glail\OneDrive\Documentos\Visual Studio 2015\Projects\TrabalhoFinal_FA7_WP\TrabalhoFinal_FA7_WP\Bin\Debug\zh-CN\Microsoft.Phone.Controls.Toolkit.resources.dll
 c:\users\glail\OneDrive\Documentos\Visual Studio 2015\Projects\TrabalhoFinal_FA7_WP\TrabalhoFinal_FA7_WP\Bin\Debug\zh-TW\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\glail\OneDrive\Documentos\Visual Studio 2015\Projects\TrabalhoFinal_FA7_WP\TrabalhoFinal_FA7_WP\Bin\Debug\pt-BR\TrabalhoFinal_FA7_WP.resources.dll
+C:\Users\glail\OneDrive\Documentos\Visual Studio 2015\Projects\TrabalhoFinal_FA7_WP\TrabalhoFinal_FA7_WP\obj\Debug\TrabalhoFinal_FA7_WP.Resources.AppResources.pt-BR.resources
+C:\Users\glail\OneDrive\Documentos\Visual Studio 2015\Projects\TrabalhoFinal_FA7_WP\TrabalhoFinal_FA7_WP\obj\Debug\pt-BR\TrabalhoFinal_FA7_WP.resources.dll
