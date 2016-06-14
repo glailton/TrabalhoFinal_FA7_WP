@@ -3,6 +3,7 @@
   <XAPFiles>
     <File>resources.pri</File>
     <File>TrabalhoFinal_FA7_WP.dll</File>
+    <File>Assets\add.png</File>
     <File>Assets\AlignmentGrid.png</File>
     <File>Assets\ApplicationIcon.png</File>
     <File>Assets\BadgeLogo.png</File>

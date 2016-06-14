@@ -15,8 +15,6 @@ namespace TrabalhoFinal_FA7_WP.view
 {
     public partial class CadastraUsuario : PhoneApplicationPage
     {
-        bool isNewInstance;
-
         public CadastraUsuario()
         {
             InitializeComponent();
@@ -50,20 +48,32 @@ namespace TrabalhoFinal_FA7_WP.view
 
         private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            //variaveis para saber qual tile deve ser removido caso o usuario seja removido do banco
+            var mySelectedItem = listaUsuarios.SelectedItem as Usuario;
+            ShellTile TileToFind = null;
+
             if (MessageBox.Show(AppResources.removeUserAsk, AppResources.removeUserTitle, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
             {
                 Image img = (Image)sender;
-                Usuario aluno = (Usuario)img.DataContext;
+                Usuario usuario = (Usuario)img.DataContext;
+
+                TileToFind = ShellTile.ActiveTiles.FirstOrDefault(x => x.NavigationUri.ToString().Contains(mySelectedItem.Nome));
 
                 using (var db = new UsuarioDataContext())
                 {
-                    db.usuarios.Attach(aluno);
-                    db.usuarios.DeleteOnSubmit(aluno);
+                    db.usuarios.Attach(usuario);
+                    db.usuarios.DeleteOnSubmit(usuario);
                     db.SubmitChanges();
 
                     MessageBox.Show(AppResources.sucessRemoved);
                     CarregarUsuarios();
                 }
+            }
+
+            // Se o tile existia e o usuario foi removido ele é removido
+            if (TileToFind != null)
+            {
+                TileToFind.Delete();
             }
         }
 
@@ -75,16 +85,6 @@ namespace TrabalhoFinal_FA7_WP.view
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-
-            if (!isNewInstance)
-            {
-                //recupera os dados qdo volta a rodar a aplicação
-                if (NavigationContext.QueryString.ContainsKey("nome"))
-                {
-                    txtUsuario.Text = State["nome"].ToString();
-                }
-            }
-
         }
 
         void CarregarUsuarios()
@@ -98,7 +98,7 @@ namespace TrabalhoFinal_FA7_WP.view
             }
         }
 
-        private void listaUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ImageAdd_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             if (MessageBox.Show(AppResources.createSecTileAsk, AppResources.createSecTileTitle, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
             {
@@ -122,7 +122,6 @@ namespace TrabalhoFinal_FA7_WP.view
                     MessageBox.Show(AppResources.existedTile);
                 }
             }
-               
         }
     }
 }

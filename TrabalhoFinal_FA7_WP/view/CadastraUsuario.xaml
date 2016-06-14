@@ -24,7 +24,7 @@
             <TextBox Name="txtUsuario" />
             <Button Name="btnCadastrarUsuario" Content="{Binding LocalizedResources.addUsers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnCadastrarUsuario_Click" Width="260"/>
 
-            <ListBox Name="listaUsuarios" Grid.Row="1" SelectionChanged="listaUsuarios_SelectionChanged" Height="560"
+            <ListBox Name="listaUsuarios" Grid.Row="1" Height="560"
                      ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -35,6 +35,7 @@
                                    Text="{Binding Nome}"/>
                             </StackPanel>
                             <Image Source="/Assets/delete.png" Tap="Image_Tap"></Image>
+                            <Image Source="/Assets/add.png" Tap="ImageAdd_Tap"></Image>
                         </StackPanel>
 
                     </DataTemplate>
