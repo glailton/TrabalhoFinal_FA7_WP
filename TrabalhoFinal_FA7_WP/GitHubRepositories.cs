@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.Web.Http;
 using Newtonsoft.Json.Linq;
+using System.Windows;
+using TrabalhoFinal_FA7_WP.Resources;
 
 namespace TrabalhoFinal_FA7_WP
 {
@@ -19,7 +21,7 @@ namespace TrabalhoFinal_FA7_WP
             httpClient.DefaultRequestHeaders.Add("User-Agent", "Other");
             var response = await httpClient.GetAsync(uri);
 
-            if (response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode )
             {
                 var jsonRepositories = JArray.Parse(await response.Content.ReadAsStringAsync());
 
@@ -29,10 +31,15 @@ namespace TrabalhoFinal_FA7_WP
                         repository.Value<string>("name") + " - " +
                         repository.Value<string>("language"));
                 }
+
+                if(repositories.Count <= 0)
+                {
+                    repositories.Add(AppResources.noFoundprojects);
+                }
             }
             else
             {
-                repositories.Add("Não foram encontrado projetos");
+                repositories.Add(AppResources.noFoundprojects);
             }
 
             return repositories;

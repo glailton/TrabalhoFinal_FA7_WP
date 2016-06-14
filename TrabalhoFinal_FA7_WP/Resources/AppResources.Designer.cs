@@ -124,6 +124,15 @@ namespace TrabalhoFinal_FA7_WP.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There are no projects for this user.
+        /// </summary>
+        public static string noFoundprojects {
+            get {
+                return ResourceManager.GetString("noFoundprojects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GitHub Projects.
         /// </summary>
         public static string pageTitle {

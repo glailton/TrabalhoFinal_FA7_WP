@@ -170,4 +170,7 @@
   <data name="userAdded" xml:space="preserve">
     <value>Usuário adicionado com sucesso</value>
   </data>
+  <data name="noFoundProjects" xml:space="preserve">
+    <value>Não foram encontrado projetos</value>
+  </data>
 </root>
