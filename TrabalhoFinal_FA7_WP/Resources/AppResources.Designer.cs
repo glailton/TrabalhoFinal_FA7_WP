@@ -221,5 +221,14 @@ namespace TrabalhoFinal_FA7_WP.Resources {
                 return ResourceManager.GetString("userAdded", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert a valid user.
+        /// </summary>
+        public static string validUser {
+            get {
+                return ResourceManager.GetString("validUser", resourceCulture);
+            }
+        }
     }
 }

@@ -27,23 +27,23 @@ namespace TrabalhoFinal_FA7_WP.view
             {
                 Nome = txtUsuario.Text
             };
-            using (var db = new UsuarioDataContext())
-            {
-                db.usuarios.InsertOnSubmit(usuario);
-                db.SubmitChanges();
 
-                MessageBox.Show(AppResources.userAdded);
-                txtUsuario.Text = "";
-                CarregarUsuarios();
-            }
-        }
-
-        private void btnVoltar_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.NavigationService.CanGoBack)
+            if (txtUsuario.Text.Equals(""))
             {
-                this.NavigationService.GoBack();
+                MessageBox.Show(AppResources.validUser);
             }
+            else
+            {
+                using (var db = new UsuarioDataContext())
+                {
+                    db.usuarios.InsertOnSubmit(usuario);
+                    db.SubmitChanges();
+
+                    MessageBox.Show(AppResources.userAdded);
+                    txtUsuario.Text = "";
+                    CarregarUsuarios();
+                }
+            }         
         }
 
         private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -85,6 +85,7 @@ namespace TrabalhoFinal_FA7_WP.view
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+			State["novo_usuario"] = txtUsuario.Text;
         }
 
         void CarregarUsuarios()
@@ -122,6 +123,11 @@ namespace TrabalhoFinal_FA7_WP.view
                     MessageBox.Show(AppResources.existedTile);
                 }
             }
+        }
+
+        private void btnProjetoUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/view/UsuarioProjetos.xaml", UriKind.Relative));
         }
     }
 }

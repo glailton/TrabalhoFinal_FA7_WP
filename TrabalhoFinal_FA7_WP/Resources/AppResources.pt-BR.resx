@@ -173,4 +173,7 @@
   <data name="noFoundProjects" xml:space="preserve">
     <value>Não foram encontrado projetos</value>
   </data>
+  <data name="validUser" xml:space="preserve">
+    <value>Insira um usuário válido</value>
+  </data>
 </root>

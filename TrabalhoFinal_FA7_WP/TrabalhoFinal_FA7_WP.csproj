@@ -157,6 +157,7 @@
     </Content>
     <Content Include="Assets\BadgeLogo.png" />
     <Content Include="Assets\delete.png" />
+    <Content Include="Assets\github.png" />
     <Content Include="Assets\images.png" />
     <Content Include="Assets\Logo.png" />
     <Content Include="Assets\SplashScreen.png" />

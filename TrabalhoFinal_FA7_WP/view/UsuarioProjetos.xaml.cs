@@ -21,9 +21,7 @@ namespace TrabalhoFinal_FA7_WP.view
 
         private async void btnListarProjetos_Click(object sender, RoutedEventArgs e)
         {
-            var gitHubRepositories = new GitHubRepositories();
-            var lista = await gitHubRepositories.GetRepositories(lspusuarios.SelectedItem as string);
-            repositories.ItemsSource = lista;
+            listarProjetos();
         }
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
@@ -32,6 +30,14 @@ namespace TrabalhoFinal_FA7_WP.view
             {
                 this.NavigationService.GoBack();
             }
+        }
+
+
+        private async void listarProjetos()
+        {
+            var gitHubRepositories = new GitHubRepositories();
+            var lista = await gitHubRepositories.GetRepositories(lspusuarios.SelectedItem as string);
+            repositories.ItemsSource = lista;
         }
 
         /// <summary>
@@ -48,8 +54,34 @@ namespace TrabalhoFinal_FA7_WP.view
             {
                 string nome = NavigationContext.QueryString["nome"];
                 lspusuarios.SelectedItem = nome;
+                listarProjetos();
             }
+
+            // Chamando quando retorno do modo Tombstoned
+            if (State.ContainsKey("usuario_atual"))
+            {
+                lspusuarios.SelectedItem = State["usuario_atual"] as string;
+                repositories.ItemsSource = (List<string>)State["projetos_usuario_atual"];
+            }
+
+
         }
+
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            // Salva o estado da página se a navegação não for pelo botão Back
+            if (e.NavigationMode != NavigationMode.Back)
+            {
+                State["usuario_atual"] = lspusuarios.SelectedItem;
+                State["projetos_usuario_atual"] = repositories.ItemsSource;
+            }
+
+            base.OnNavigatedFrom(e);
+        }
+
+
+
 
         void CarregarUsuarios()
         {
@@ -69,6 +101,11 @@ namespace TrabalhoFinal_FA7_WP.view
 
                 lspusuarios.ItemsSource = listaNomes;
             }
+        }
+
+        private void btnCadastrarUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/view/CadastraUsuario.xaml", UriKind.Relative));
         }
     }
 }
