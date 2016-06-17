@@ -26,6 +26,7 @@
             </toolkit:ListPicker>
 
             <Button Name="btnListarProjetos" Content="{Binding LocalizedResources.showProjects, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Width="260" HorizontalAlignment="Center" Click="btnListarProjetos_Click"/>
+            <Button Name="btnCadastrarUsuario" Content="{Binding LocalizedResources.addUsers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnCadastrarUsuario_Click" Width="260"/>
 
             <StackPanel Margin="50" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <ListBox Name="repositories" Height="500"/>

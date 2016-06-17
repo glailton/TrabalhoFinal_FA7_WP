@@ -195,6 +195,9 @@
     <AppxPackagedFile Include="C:\Users\glail\OneDrive\Documentos\Visual Studio 2015\Projects\TrabalhoFinal_FA7_WP\TrabalhoFinal_FA7_WP\Assets\delete.png">
       <PackagePath>Assets\delete.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\glail\OneDrive\Documentos\Visual Studio 2015\Projects\TrabalhoFinal_FA7_WP\TrabalhoFinal_FA7_WP\Assets\github.png">
+      <PackagePath>Assets\github.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\glail\OneDrive\Documentos\Visual Studio 2015\Projects\TrabalhoFinal_FA7_WP\TrabalhoFinal_FA7_WP\Assets\images.png">
       <PackagePath>Assets\images.png</PackagePath>
     </AppxPackagedFile>
