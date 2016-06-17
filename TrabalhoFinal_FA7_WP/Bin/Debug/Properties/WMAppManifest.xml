@@ -5,7 +5,7 @@
     <Language code="en" />
     <Language code="pt-BR" />
   </Languages>
-  <App xmlns="" ProductID="{05e81c66-e86c-4ba8-bc55-5caf3759ec10}" Title="TrabalhoFinal_FA7_WP" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="TrabalhoFinal_FA7_WP author" Description="Sample description" SDOptOut="false" BackUpOptOut="false" Publisher="TrabalhoFinal_FA7_WP" PublisherID="{3ecae59a-4e3e-45a7-83bb-436294b354cf}">
+  <App xmlns="" ProductID="{05e81c66-e86c-4ba8-bc55-5caf3759ec10}" Title="GitHub App" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="TrabalhoFinal_FA7_WP author" Description="Sample description" SDOptOut="false" BackUpOptOut="false" Publisher="TrabalhoFinal_FA7_WP" PublisherID="{3ecae59a-4e3e-45a7-83bb-436294b354cf}">
     <IconPath IsRelative="true" IsResource="false">Assets\github.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -23,7 +23,7 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\github.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\github.png</BackgroundImageURI>
-          <Title>TrabalhoFinal_FA7_WP</Title>
+          <Title>GitHub App</Title>
           <BackContent></BackContent>
           <BackBackgroundImageURI></BackBackgroundImageURI>
           <BackTitle></BackTitle>

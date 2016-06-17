@@ -133,7 +133,7 @@ namespace TrabalhoFinal_FA7_WP.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GitHub Projects.
+        ///   Looks up a localized string similar to GitHub App.
         /// </summary>
         public static string pageTitle {
             get {

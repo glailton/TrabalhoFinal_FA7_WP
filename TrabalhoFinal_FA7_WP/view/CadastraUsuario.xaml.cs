@@ -15,9 +15,13 @@ namespace TrabalhoFinal_FA7_WP.view
 {
     public partial class CadastraUsuario : PhoneApplicationPage
     {
+
+        bool _isNewPageInstance;
+
         public CadastraUsuario()
         {
             InitializeComponent();
+            _isNewPageInstance = true;
             CarregarUsuarios();
         }
 
@@ -85,7 +89,28 @@ namespace TrabalhoFinal_FA7_WP.view
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-			State["novo_usuario"] = txtUsuario.Text;
+	//		State["novo_usuario"] = txtUsuario.Text;
+
+            if (_isNewPageInstance)
+            {
+                // Chamando quando retorno do modo Tombstoned
+                if (State.ContainsKey("usuario_atual"))
+                {
+                    txtUsuario.Text = State["usuario_atual"] as string;
+                }
+            }
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+
+            // Salva o estado da página se a navegação não for pelo botão Back
+            if (e.NavigationMode != NavigationMode.Back)
+            {
+                State["usuario_atual"] = txtUsuario.Text;
+            }
+            _isNewPageInstance = false;
         }
 
         void CarregarUsuarios()

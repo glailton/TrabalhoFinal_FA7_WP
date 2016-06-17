@@ -150,7 +150,7 @@
     <value>There are no projects for this user</value>
   </data>
   <data name="pageTitle" xml:space="preserve">
-    <value>GitHub Projects</value>
+    <value>GitHub App</value>
   </data>
   <data name="projectsUsers" xml:space="preserve">
     <value>Projects by User</value>

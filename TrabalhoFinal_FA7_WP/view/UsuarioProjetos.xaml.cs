@@ -12,27 +12,20 @@ namespace TrabalhoFinal_FA7_WP.view
 {
     public partial class UsuarioProjetos : PhoneApplicationPage
     {
+        bool _isNewPageInstance;
 
         public UsuarioProjetos()
         {
             InitializeComponent();
+            _isNewPageInstance = true;
             CarregarUsuarios();
         }
 
-        private async void btnListarProjetos_Click(object sender, RoutedEventArgs e)
+        private void btnListarProjetos_Click(object sender, RoutedEventArgs e)
         {
             listarProjetos();
         }
-
-        private void btnVoltar_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.NavigationService.CanGoBack)
-            {
-                this.NavigationService.GoBack();
-            }
-        }
-
-
+    
         private async void listarProjetos()
         {
             var gitHubRepositories = new GitHubRepositories();
@@ -57,27 +50,29 @@ namespace TrabalhoFinal_FA7_WP.view
                 listarProjetos();
             }
 
-            // Chamando quando retorno do modo Tombstoned
-            if (State.ContainsKey("usuario_atual"))
+            if (_isNewPageInstance)
             {
-                lspusuarios.SelectedItem = State["usuario_atual"] as string;
-                repositories.ItemsSource = (List<string>)State["projetos_usuario_atual"];
+                // Chamando quando retorno do modo Tombstoned
+                if (State.ContainsKey("usuario_atual"))
+                {
+                    lspusuarios.SelectedItem = State["usuario_atual"] as string;
+                    repositories.ItemsSource = (List<string>)State["projetos_usuario_atual"];
+                }
             }
-
-
         }
 
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            base.OnNavigatedFrom(e);
+
             // Salva o estado da página se a navegação não for pelo botão Back
             if (e.NavigationMode != NavigationMode.Back)
             {
                 State["usuario_atual"] = lspusuarios.SelectedItem;
                 State["projetos_usuario_atual"] = repositories.ItemsSource;
             }
-
-            base.OnNavigatedFrom(e);
+            _isNewPageInstance = false;
         }
 
 
