@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Name="content" Orientation="Vertical" Grid.Row="0">
-            <TextBlock Text="{Binding LocalizedResources.user, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" FontSize="30"/>
+            <TextBlock Text="{Binding LocalizedResources.user, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" FontSize="30"/>
             <TextBox Name="txtUsuario" />
             <Button Name="btnCadastrarUsuario" Content="{Binding LocalizedResources.addUsers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnCadastrarUsuario_Click" Width="260"/>
             <Button Name="btnProjetoUsuario" Content="{Binding LocalizedResources.showProjects, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnProjetoUsuario_Click" Width="260"/>

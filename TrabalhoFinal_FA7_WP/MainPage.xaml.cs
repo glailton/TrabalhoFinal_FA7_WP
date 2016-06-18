@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using TrabalhoFinal_FA7_WP.Resources;
+using System.Globalization;
 
 namespace TrabalhoFinal_FA7_WP
 {

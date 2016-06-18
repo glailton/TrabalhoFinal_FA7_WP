@@ -15,7 +15,7 @@
 
     <StackPanel Orientation="Vertical" VerticalAlignment="Center">
         <TextBlock Text="{Binding LocalizedResources.pageTitle, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="50" HorizontalAlignment="Center" />
-        <Button Name="btnProjetos" Content="{Binding LocalizedResources.projectsUsers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Width="250" HorizontalAlignment="Center" Click="btnProjetos_Click"/>
+        <Button Name="btnProjetos" Content="{Binding LocalizedResources.projectsUsers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Width="250" FontSize="20" HorizontalAlignment="Center" Click="btnProjetos_Click"/>
         <Button Name="btnCadastro" Content="{Binding LocalizedResources.addUsers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Width="250" HorizontalAlignment="Center" Click="btnCadastro_Click"/>
     </StackPanel>
 

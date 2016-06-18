@@ -3,6 +3,8 @@
   <XAPFiles>
     <File>resources.pri</File>
     <File>TrabalhoFinal_FA7_WP.dll</File>
+    <File>pt-BR\TrabalhoFinal_FA7_WP.resources.dll</File>
+    <File>pt-BR\Microsoft.Phone.Controls.Toolkit.resources.dll</File>
     <File>Assets\add.png</File>
     <File>Assets\AlignmentGrid.png</File>
     <File>Assets\ApplicationIcon.png</File>
